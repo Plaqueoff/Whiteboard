@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1210.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="whiteboard.client.Controller">
+   <children>
+      <VBox prefHeight="800.0" prefWidth="1210.0">
+         <children>
+            <HBox fx:id="optionsHBox" alignment="CENTER_LEFT" depthTest="ENABLE" fillHeight="false" prefHeight="30.0" prefWidth="1210.0" style="-fx-background-color: #444554;">
+               <children>
+                  <MenuButton fx:id="fileMenuButton" mnemonicParsing="false" style="-fx-background-color: #444554;" text="File" textFill="WHITE">
+                
+                </MenuButton>
+                  <MenuButton mnemonicParsing="false" style="-fx-background-color: #444554;" text="Edit" textFill="WHITE">
+                    <items>
+                      <MenuItem fx:id="undoMenuItem" mnemonicParsing="false" text="Undo (CTRL + Z)" />
+                    </items>
+                  </MenuButton>
+                  <ToggleButton fx:id="arrowToggleButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: #444554;" styleClass="nuoli" stylesheets="@style.css" text="arrow" textFill="#ffffff00">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="freeLineToggleButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #444554;" styleClass="vapaaViiva" stylesheets="@style.css" text="freeline" textFill="#ffffff00">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="lineToggleButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #444554;" styleClass="viiva" stylesheets="@style.css" text="line" textFill="#ffffff00">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="squareToggleButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #444554;" styleClass="nelio" stylesheets="@style.css" text="nelio">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="circleToggleButton" layoutX="193.0" layoutY="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #444554;" styleClass="circle" stylesheets="@style.css" text="circle">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="eraserToggleButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #444554 #444554;" styleClass="eraser" stylesheets="@style.css" text="Eraser">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </ToggleButton>
+                  <TextField fx:id="coordinatesText" blendMode="SRC_ATOP" editable="false" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: #444554;" text="0.0 , 0.0">                  
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextField>
+                  <CheckBox fx:id="hideCanvasImageCheckBox" layoutX="11.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-color: #7F7B82;" text="Hide Background Image" />
+               </children>
+            </HBox>
+            <HBox fx:id="contentHBox" prefHeight="730.0" prefWidth="1210.0">
+               <children>
+                  <VBox fx:id="drawingBoardVBox" prefHeight="730.0" prefWidth="800.0">
+                     <children>
+                        <StackPane fx:id="canvasStackPane">
+                           <children>
+                              <Canvas fx:id="drawingCanvas" height="700.0" width="800.0" />
+                              <Canvas fx:id="previewCanvas" height="700.0" width="800.0" />
+                              <Pane fx:id="cursorPane" />
+                           </children>
+                        </StackPane>
+                        <HBox fx:id="toolsHBox" alignment="CENTER_LEFT" layoutX="10.0" prefHeight="31.0" prefWidth="800.0" style="-fx-background-color: #7F7B82; -fx-border-color: #172121;">
+                           <children>
+                              <Button fx:id="witherPenSizeButton" layoutX="11.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-color: #7F7B82;" text="Size -" />
+                              <Text fx:id="penSizeText" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="25.0" />
+                              <Button fx:id="growPenSizeButton" mnemonicParsing="false" style="-fx-background-color: #7F7B82;" text="Size +" />
+                              <Slider fx:id="penSizeSlider" max="50.0" min="1.0" />
+                              <Text fx:id="penOpacityText" strokeType="OUTSIDE" strokeWidth="0.0" text="Opacity: " wrappingWidth="50.0" />
+                              <Slider fx:id="penOpacitySlider" max="1.0" min="0.0" value="1.0" />
+                              <Text fx:id="penOpacityValueText" strokeType="OUTSIDE" strokeWidth="0.0" text="1.0" wrappingWidth="42.0" />
+                              <ColorPicker fx:id="penColorPicker" style="-fx-background-color: #7F7B82;" />
+                              <Button fx:id="clearCanvasButton" layoutX="11.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-color: #7F7B82;" text="Clear" />
+                              <Button fx:id="clearOwnLinesButton" layoutX="11.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-color: #7F7B82;" text="Clear own lines" />
+                           </children>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="730.0" prefWidth="70.0" style="-fx-background-color: #D0CFCF;">
+                     <children>
+                        <VBox fx:id="clientsVBox" prefHeight="700.0">
+                           <children>
+                              <ListView fx:id="clientListView" fixedCellSize="0.0" prefHeight="700.0" prefWidth="70.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </ListView>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: #7F7B82;">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clients: " />
+                              <Text fx:id="clientsCountText" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="chatVBox" alignment="TOP_CENTER" prefHeight="730.0" prefWidth="340.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <Pane prefHeight="700.0" style="-fx-background-color: #7F7B82;">
+                           <children>
+                              <Text fx:id="isTypingText" fill="#ae1f1f" layoutX="14.0" layoutY="683.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Someone is typing...." wrappingWidth="108.78515625" />
+                              <TextArea fx:id="chatTextArea" editable="false" prefHeight="700.0" prefWidth="340.0" promptText="Chat" wrapText="true">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TextArea>
+                           </children>
+                        </Pane>
+                        <HBox fx:id="sendMessageHBox" alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="340.0" spacing="5.0" style="-fx-background-color: #444554;">
+                           <children>
+                              <TextField fx:id="typeTextField" prefHeight="31.0" prefWidth="287.0" promptText="Write here..." />
+                              <Button fx:id="sendButton" mnemonicParsing="false" text="Send" />
+                           </children>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox fx:id="downBarHBox" alignment="CENTER" prefHeight="40.0" prefWidth="1210.0" style="-fx-background-color: #444554;">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Awesome Whiteboard" textAlignment="CENTER" wrappingWidth="314.13671875">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

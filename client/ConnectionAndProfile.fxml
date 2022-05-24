@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #444554;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="whiteboard.client.ConnectionAndProfileController">
+   <children>
+      <Text fill="WHITE" layoutX="200.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Awesome Whiteboard" textAlignment="CENTER" wrappingWidth="800.0">
+         <font>
+            <Font name="System Bold" size="70.0" />
+         </font>
+      </Text>
+      <Pane layoutX="190.0" layoutY="165.0" prefHeight="257.0" prefWidth="820.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="349.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile:">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Text>
+            <Label layoutX="398.0" layoutY="96.0" prefHeight="45.0" prefWidth="89.0" text="Name:">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="profImageView" fitHeight="168.0" fitWidth="174.0" layoutX="99.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField fx:id="nameTextField" layoutX="496.0" layoutY="97.0" prefHeight="40.0" prefWidth="266.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <ColorPicker fx:id="nameColorPicker" layoutX="496.0" layoutY="153.0" prefHeight="40.0" prefWidth="266.0" style="-fx-background-color: white; -fx-border-color: black;" />
+            <Label layoutX="398.0" layoutY="150.0" prefHeight="45.0" prefWidth="89.0" text="Color:">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="changeImageButton" layoutX="100.0" layoutY="45.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="314.0" layoutY="445.0" prefHeight="306.0" prefWidth="573.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="174.0" layoutY="87.0" prefHeight="25.0" prefWidth="71.0" text="Host:">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Text layoutX="228.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Server:">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Text>
+            <Label layoutX="181.0" layoutY="147.0" prefHeight="45.0" prefWidth="65.0" text="Port:">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="portTextField" layoutX="293.0" layoutY="147.0" prefHeight="25.0" prefWidth="116.0" text="4999">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="hostTextField" layoutX="294.0" layoutY="87.0" prefHeight="44.0" prefWidth="168.0" text="localhost">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Button fx:id="connectButton" layoutX="210.0" layoutY="227.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="159.0" style="-fx-background-color: white; -fx-border-color: black;" text="Connect">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Text layoutX="210.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remember me: " />
+            <CheckBox fx:id="rememberMeCheckBox" layoutX="354.0" layoutY="199.0" mnemonicParsing="false" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

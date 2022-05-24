@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #444554;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="whiteboard.client.ChangeImageController">
+   <children>
+      <Text fill="WHITE" layoutX="185.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Profile Picture">
+         <font>
+            <Font name="System Bold" size="60.0" />
+         </font>
+      </Text>
+      <Pane layoutX="125.0" layoutY="170.0" prefHeight="350.0" prefWidth="750.0" style="-fx-background-color: white;">
+         <children>
+            <HBox fx:id="iconSelectionList" layoutX="46.0" layoutY="47.0" prefHeight="80.0" prefWidth="660.0" />
+            <ImageView fx:id="selectedImageView" fitHeight="90.0" fitWidth="90.0" layoutX="81.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="246.0" layoutY="152.0" mnemonicParsing="false" onAction="#handleOkButton" prefHeight="46.0" prefWidth="260.0" style="-fx-background-color: white; -fx-border-color: black;" text="Ok">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="246.0" layoutY="273.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="46.0" prefWidth="260.0" style="-fx-background-color: white; -fx-border-color: black;" text="Cancel">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="ownFileButton" layoutX="245.0" layoutY="214.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="260.0" style="-fx-background-color: white; -fx-border-color: black;" text="Choose From Own Files">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

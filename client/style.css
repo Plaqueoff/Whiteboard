@@ -1,0 +1,53 @@
+.nuoli{
+    
+    -fx-background-image: url("pics/Nuoli.png");
+}
+
+.viiva{
+    
+    -fx-background-image: url("pics/Viiva.png");
+}
+
+.vapaaViiva{
+    
+    -fx-background-image: url("pics/Vapaaviiva.png");
+}
+
+.nelio{
+    -fx-background-image: url("pics/Nelio.png");
+}
+
+.circle{
+    -fx-background-image: url("pics/Circle.png");
+}
+
+.nuoli:selected{
+    
+    -fx-background-image: url("pics/NuoliValittuW.png");   
+}
+
+.vapaaViiva:selected{
+    
+    -fx-background-image: url("pics/VapaaviivaValittuW.png");
+}
+
+.viiva:selected{
+    
+    -fx-background-image: url("pics/ViivaValittuW.png");
+}
+.nelio:selected{
+    -fx-background-image: url("pics/NelioValittuW.png");
+}
+
+.circle:selected{
+    -fx-background-image: url("pics/CircleValittuW.png"); 
+}
+
+.eraser{
+    -fx-background-image: url("pics/Eraser.png");
+    
+}
+
+.eraser:selected{
+    -fx-background-image: url("pics/EraserWValittu.png");
+}
